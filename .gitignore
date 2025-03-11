@@ -1,0 +1,51 @@
+/.phpcs-cache
+/.phpunit.cache
+/.psalm-cache
+vendor/
+config/development.config.php
+config/autoload/*
+data/cache/*
+!data/cache/.gitkeep
+phpunit.xml
+# Environment & Configuration Files
+/config/autoload/local.php
+/config/autoload/*.local.php
+/config/autoload/development.php
+/config/autoload/*.development.php
+
+# Database & Credentials
+/data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache, Logs, and Sessions
+/data/cache/
+/data/logs/
+/data/session/
+var/cache/
+var/logs/
+
+# Composer Dependencies (Only if you want others to install them separately)
+vendor/
+composer.lock
+
+# Node.js Dependencies (If applicable)
+node_modules/
+package-lock.json
+npm-debug.log
+
+# IDE & Editor Files
+.idea/
+.vscode/
+*.iml
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# PHPUnit & Coverage Reports
+/phpunit.xml
+/tests/_output/
+/coverage/
+

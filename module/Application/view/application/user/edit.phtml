@@ -1,0 +1,7 @@
+<h2><?= isset($user) ? 'Edit User' : 'Add User' ?></h2>
+<form method="post">
+    <input type="text" name="name" placeholder="Name" value="<?= $user->name ?? '' ?>" required>
+    <input type="email" name="email" placeholder="Email" value="<?= $user->email ?? '' ?>" required>
+    <input type="password" name="password" placeholder="Password" <?= isset($user) ? '' : 'required' ?>>
+    <button type="submit">Save</button>
+</form>
