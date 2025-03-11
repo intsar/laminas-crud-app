@@ -3,7 +3,6 @@
 /.psalm-cache
 vendor/
 config/development.config.php
-config/autoload/*
 data/cache/*
 !data/cache/.gitkeep
 phpunit.xml
@@ -15,7 +14,6 @@ phpunit.xml
 
 # Database & Credentials
 /data/
-*.db
 *.sqlite
 *.sqlite3
 

@@ -28,8 +28,12 @@ looking to get their feet wet with Laminas MVC.
 ## Installation / clone
 
 Step 1: git clone https://github.com/intsar/laminas-crud-app.git
+
 Step 2: cd laminas-crud-app
+
 Step 3: composer install
+
+Step 4: 
 
 now, you can test it out immediately using PHP's built-in web server:
 
