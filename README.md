@@ -33,7 +33,7 @@ Step 2: cd laminas-crud-app
 
 Step 3: composer install
 
-Step 4: 
+Step 4: Create the database, update the configuration in config/global.php, and execute the table queries from the DB folder."
 
 now, you can test it out immediately using PHP's built-in web server:
 
