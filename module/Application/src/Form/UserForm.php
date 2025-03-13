@@ -1,21 +1,20 @@
 <?php
+
 namespace Application\Form;
 
 use Laminas\Form\Form;
 use Laminas\Form\Element;
 use Laminas\InputFilter\InputFilter;
+use Laminas\Validator\NotEmpty;
+use Laminas\Validator\EmailAddress;
 
 class UserForm extends Form
 {
-    public function __construct()
+    public function __construct($name = null)
     {
         parent::__construct('user_form');
 
-        $this->add([
-            'name' => 'id',
-            'type' => Element\Hidden::class,
-        ]);
-
+        // Name Field
         $this->add([
             'name' => 'name',
             'type' => Element\Text::class,
@@ -23,12 +22,13 @@ class UserForm extends Form
                 'label' => 'Name',
             ],
             'attributes' => [
-                'class'       => 'form-control',
-                'placeholder' => 'Enter your name',
-                'required'    => true,
+                'class' => 'form-control',
+                'placeholder' => 'Enter Name',
+                'required' => true,
             ],
         ]);
 
+        // Email Field
         $this->add([
             'name' => 'email',
             'type' => Element\Email::class,
@@ -36,44 +36,34 @@ class UserForm extends Form
                 'label' => 'Email',
             ],
             'attributes' => [
-                'class'       => 'form-control',
-                'placeholder' => 'Enter your email',
-                'required'    => true,
+                'class' => 'form-control',
+                'placeholder' => 'Enter Email',
+                'required' => true,
             ],
         ]);
 
+        // Password Field
+        $this->add([
+            'name' => 'password',
+            'type' => Element\Password::class,
+            'options' => [
+                'label' => 'Password',
+            ],
+            'attributes' => [
+                'class' => 'form-control',
+                'placeholder' => 'Enter Password',
+                'required' => true,
+            ],
+        ]);
+
+        // Submit Button
         $this->add([
             'name' => 'submit',
             'type' => Element\Submit::class,
             'attributes' => [
-                'value' => 'Submit',
-                'class' => 'btn btn-primary mt-3',
+                'class' => 'btn btn-success btn-block',
+                'value' => 'Save',
             ],
         ]);
-
-        $this->setInputFilter($this->createInputFilter());
-    }
-
-    private function createInputFilter()
-    {
-        $inputFilter = new InputFilter();
-
-        $inputFilter->add([
-            'name'     => 'name',
-            'required' => true,
-            'filters'  => [['name' => 'StringTrim']],
-        ]);
-
-        $inputFilter->add([
-            'name'     => 'email',
-            'required' => true,
-            'validators' => [
-                [
-                    'name' => 'EmailAddress',
-                ],
-            ],
-        ]);
-
-        return $inputFilter;
     }
 }
