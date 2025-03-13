@@ -43,6 +43,7 @@ class UserController extends AbstractActionController
 
         if ($this->getRequest()->isPost()) {
             $data = $this->params()->fromPost();
+            $data['id'] = $id;
             $user->exchangeArray($data);
             $this->userTable->saveUser($user);
             return $this->redirect()->toRoute('user', ['action' => 'index']);
